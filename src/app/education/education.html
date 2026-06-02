@@ -1,0 +1,38 @@
+<section id="education" class="education">
+
+  <h2>
+    <i class="fas fa-graduation-cap"></i>
+    My <span>Education</span>
+  </h2>
+
+  <p class="subtitle">
+    Education is the foundation of continuous learning and growth.
+  </p>
+
+  <div
+    class="edu-card"
+    *ngFor="let edu of educationList">
+
+    <img
+      [src]="edu.image"
+      [alt]="edu.degree">
+
+    <div class="edu-content">
+
+      <h3>{{ edu.degree }}</h3>
+
+      <h4>{{ edu.institute }}</h4>
+
+      <p class="score">{{ edu.score }}</p>
+
+      <p class="duration">{{ edu.duration }}</p>
+
+      <span class="status">
+        {{ edu.status }}
+      </span>
+
+    </div>
+
+  </div>
+
+</section>
