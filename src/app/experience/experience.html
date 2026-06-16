@@ -1,0 +1,41 @@
+<section id="experience" class="experience">
+
+  <h2>
+    <i class="fas fa-briefcase"></i>
+    Experience
+  </h2>
+
+  <div class="timeline">
+
+    <div
+      *ngFor="let exp of experiences"
+      class="timeline-item"
+      [ngClass]="exp.side">
+
+      <div class="content">
+
+        <h3>{{exp.company}}</h3>
+
+        <h4>{{exp.role}}</h4>
+
+        <p class="date">
+          {{exp.duration}}
+        </p>
+
+        <ul>
+          <li *ngFor="let point of exp.points">
+            {{point}}
+          </li>
+        </ul>
+
+      </div>
+
+      <div class="circle">
+        <i class="fas fa-briefcase"></i>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>

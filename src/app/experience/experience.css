@@ -1,0 +1,165 @@
+.experience{
+  background:#f5f5f5;
+  padding:100px 10%;
+  overflow:hidden;
+}
+
+.experience h2{
+  text-align:center;
+  font-size:55px;
+  margin-bottom:80px;
+  color:#111;
+}
+
+.experience h2 i{
+  margin-right:10px;
+}
+
+.timeline{
+  position:relative;
+  max-width:1200px;
+  margin:auto;
+}
+
+.timeline::before{
+  content:'';
+  position:absolute;
+  width:6px;
+  background:#06003f;
+  top:0;
+  bottom:0;
+  left:50%;
+  transform:translateX(-50%);
+}
+
+.timeline-item{
+  position:relative;
+  width:50%;
+  margin-bottom:60px;
+}
+
+.timeline-item.left{
+  left:0;
+  padding-right:70px;
+}
+
+.timeline-item.right{
+  left:50%;
+  padding-left:70px;
+}
+
+.content{
+  background:#ff9800;
+  padding:25px;
+  border-radius:15px;
+  box-shadow:0 8px 20px rgba(0,0,0,.2);
+  transition:.4s;
+}
+
+.content:hover{
+  transform:translateY(-10px) scale(1.02);
+}
+
+.content h3{
+  font-size:32px;
+  margin-bottom:10px;
+}
+
+.content h4{
+  font-size:24px;
+  margin-bottom:10px;
+}
+
+.date{
+  font-weight:700;
+  margin-bottom:15px;
+}
+
+.content ul{
+  padding-left:20px;
+}
+
+.content li{
+  margin-bottom:8px;
+  line-height:1.5;
+}
+
+.circle{
+  position:absolute;
+  top:30px;
+  width:50px;
+  height:50px;
+  background:white;
+  border:5px solid #ff9800;
+  border-radius:50%;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  color:#06003f;
+  font-size:20px;
+}
+
+.left .circle{
+  right:-25px;
+}
+
+.right .circle{
+  left:-25px;
+}
+
+.left .content{
+  animation:slideLeft 1s ease;
+}
+
+.right .content{
+  animation:slideRight 1s ease;
+}
+
+@keyframes slideLeft{
+  from{
+    opacity:0;
+    transform:translateX(-100px);
+  }
+  to{
+    opacity:1;
+    transform:translateX(0);
+  }
+}
+
+@keyframes slideRight{
+  from{
+    opacity:0;
+    transform:translateX(100px);
+  }
+  to{
+    opacity:1;
+    transform:translateX(0);
+  }
+}
+
+@media(max-width:768px){
+
+  .timeline::before{
+    left:25px;
+  }
+
+  .timeline-item{
+    width:100%;
+    padding-left:80px !important;
+    padding-right:0 !important;
+    left:0 !important;
+  }
+
+  .circle{
+    left:0 !important;
+  }
+
+  .experience h2{
+    font-size:40px;
+  }
+
+  .content h3{
+    font-size:24px;
+  }
+
+}

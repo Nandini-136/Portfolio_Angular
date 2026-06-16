@@ -1,4 +1,4 @@
-import { Component, signal } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 
 @Component({
   selector: 'app-home',
@@ -6,7 +6,7 @@ import { Component, signal } from '@angular/core';
   templateUrl: './home.html',
   styleUrl: './home.css'
 })
-export class HomeComponent {
+export class HomeComponent implements OnInit, OnDestroy {
 
   roles = [
     'Web Design',
@@ -15,23 +15,27 @@ export class HomeComponent {
     'Backend Development'
   ];
 
-  currentRole = signal('Web Design');
+  currentRole = 'Web Design';
 
+  private intervalId: any;
   index = 0;
 
-  constructor() {
+  ngOnInit(): void {
 
-    setInterval(() => {
+    this.intervalId = setInterval(() => {
 
-      this.index =
-        (this.index + 1) %
-        this.roles.length;
+      this.index = (this.index + 1) % this.roles.length;
 
-      this.currentRole.set(
-        this.roles[this.index]
-      );
+      this.currentRole = this.roles[this.index];
+
+      console.log(this.currentRole);
 
     }, 1500);
 
   }
+
+  ngOnDestroy(): void {
+    clearInterval(this.intervalId);
+  }
+
 }
