@@ -52,7 +52,21 @@ export class ProjectsComponent {
       image: 'images/landing.png',
       description: 'Modern responsive landing page developed using HTML, CSS and JavaScript.',
       github: 'https://github.com/Nandini-136/landingpage.git'
+    },
+
+    {
+      title: 'Personal Portfolio',
+      image: 'images/portfolio.png',
+      description: 'My personal portfolio page developed using HTML, CSS , typescript and Angular',
+      github: 'https://github.com/Nandini-136/Portfolio_Angular.git'
+    },
+{
+      title: 'Event Booking System',
+      image: 'images/Event.png',
+      description: 'Event booking management system developed using MERN Stack.',
+      github: 'https://github.com/Nandini-136/EventBooking.git'
     }
+
 
   ];
 }
